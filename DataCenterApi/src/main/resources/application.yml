@@ -1,0 +1,48 @@
+#-------------通用配置---------------#
+server:
+  ssl:
+    key-store: classpath:key/rsakey.jks
+    key-store-password: 123456
+    key-store-type: JKS
+    key-alias: tomcatjks
+    urls: /*
+  port: 8443
+  non-ssl-port: 8080
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  mail:
+    host: smtp.163.com
+    username: x734545751k@163.com]
+    password: 163(xk)
+
+---
+#------------开发环境配置-------------#
+spring:
+  profile: dev
+  datasource:
+    url: jdbc:oracle:thin:@172.18.30.32:1521:deve
+    username: devefdtdt
+    password: devefdtdt
+  redis:
+    host: 101.200.34.191
+    port: 6379
+    password: datacrawler
+
+---
+#------------测试环境配置-------------#
+spring:
+  profile: test
+  datasource:
+    url: jdbc:oracle:thin:@172.18.30.32:1521:deve
+    username: devefdtdt
+    password: devefdtdt
+
+---
+#------------生产环境配置-------------#
+spring:
+  profile: prod
+  datasource:
+    url: jdbc:oracle:thin:@172.18.30.32:1521:deve
+    username: devefdtdt
+    password: devefdtdt
